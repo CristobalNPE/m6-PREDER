@@ -69,7 +69,7 @@ function meetMaxValue(field, maxValue) {
     if (field.value > maxValue) {
         setInvalid(
             field,
-            `${field.name} debe ser un numero menor a ${maxValue}`
+            `Debe ingresar un número menor a ${maxValue}`
         );
         return false;
     } else {
