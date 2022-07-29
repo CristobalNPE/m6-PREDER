@@ -16,22 +16,22 @@
             <h1>Crear nueva capacitación</h1>
             <h2>Complete esta información para solicitar una capacitación.</h2>
 
-            <form class="form__container" id="capa_form">
+            <form method="post"  class="form__container" id="capa_form" th:object="${capacitacion}">
 
                 <div class="form__main">
                     <div class="input__box">
                         <span class="input__help"></span>
-                        <input class="input__text" type="text" name="RUT Cliente" id="crut" onfocusout="validateRut()">
+                        <input class="input__text" type="text" name="RUT Cliente" id="crut" onfocusout="validateRut()" th:field="*{rutCliente}">
                         <label class="input__label">Rut Cliente:</label>
                     </div>
                     <div class="input__box">
                         <span class="input__help"></span>
-                        <input class="input__text" type="text" id="clugar" name="Lugar" onfocusout="validateLugar()">
+                        <input class="input__text" type="text" id="clugar" name="Lugar" onfocusout="validateLugar()" th:field="*{lugar}">
                         <label class="input__label">Lugar:</label>
                     </div>
                     <div class="input__box">
                         <span class="input__help"></span>
-                        <select class="input__text" id="cdia">
+                        <select class="input__text" id="cdia" th:field="*{dia}">
                             <option value="">Lunes</option>
                             <option value="">Martes</option>
                             <option value="">Miércoles</option>
@@ -44,19 +44,19 @@
                     </div>
                     <div class="input__box">
                         <span class="input__help"></span>
-                        <input class="input__text" type="time" id="chora" name="Hora" onfocusout="validateHora()">
+                        <input class="input__text" type="time" id="chora" name="Hora" onfocusout="validateHora()" th:field="*{hora}">
                         <label class="input__label">Hora:</label>
                     </div>
                     <div class="input__box">
                         <span class="input__help"></span>
                         <input class="input__text" type="text" id="cduracion" name="Duración"
-                               onfocusout="validateDuracion()">
+                               onfocusout="validateDuracion()" th:field="*{duracion}">
                         <label class="input__label">Duración (min):</label>
                     </div>
                     <div class="input__box">
                         <span class="input__help"></span>
                         <input class="input__text" type="text" id="ccasistentes" name="Cantidad Asistentes"
-                               onfocusout="validateCantAsit()">
+                               onfocusout="validateCantAsit()" th:field="*{cantidadAsistentes}">
                         <label class="input__label">Cantidad de asistentes:</label>
                     </div>
 

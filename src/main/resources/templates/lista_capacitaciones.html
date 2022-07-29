@@ -33,13 +33,14 @@
 
                 <tbody>
 
-                    <tr>
-                        <td>99999999</td>
-                        <td>Lunes</td>
-                        <td>17:30</td>
-                        <td>Una Casa</td>
-                        <td>45</td>
-                        <td>28</td>
+
+                    <tr th:each="capa : ${listaCapacitaciones}">
+                        <td th:text="${capa.rutCliente}">99999999</td>
+                        <td th:text="${capa.dia}">Lunes</td>
+                        <td th:text="${capa.hora}">17:30</td>
+                        <td th:text="${capa.lugar}">Una Casa</td>
+                        <td th:text="${capa.duracion}">45</td>
+                        <td th:text="${capa.cantidadAsistentes}">28</td>
                         <td>
                             <a href="#"><span class="material-symbols-outlined table__icon">visibility</span></a>
                             <a href="#"><span class="material-symbols-outlined table__icon">edit_note</span></a>
