@@ -30,6 +30,8 @@ public class CapacitacionController {
 
   @PostMapping("/nueva")
   public String addCapacitacion(Capacitacion capacitacion){
+    log.info("Capacitacion creada: {}", capacitacion);
+
     this.service.save(capacitacion);
     return "redirect:/capacitacion/listar";
   }
