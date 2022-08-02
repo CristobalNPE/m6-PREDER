@@ -18,24 +18,13 @@ public class Usuario {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Integer idUsuario;
+  private Long idUsuario;
 
-  @Column(name = "nombre")
+
   private String nombre;
-
-  @Column(name = "fecha_nac")
   private Date fechaNacimiento;
-
-  @Column(name = "run")
   private Integer run;
-
   private Timestamp updatedAt;
 
-  public Usuario(String nombre, Date fechaNacimiento, Integer run, Timestamp updatedAt) {
-    this.nombre = nombre;
-    this.fechaNacimiento = fechaNacimiento;
-    this.run = run;
-    this.updatedAt = updatedAt;
-  }
 }
 

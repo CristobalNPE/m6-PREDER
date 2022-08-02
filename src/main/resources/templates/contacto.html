@@ -19,17 +19,17 @@
             <h1>Formulario de Contacto</h1>
             <h2>Complete los siguientes datos, nos contactaremos a la brevedad.</h2>
 
-            <form class="form__container">
+            <form class="form__container" method="post" th:object="${contacto}">
 
                 <div class="form__main">
                     <div class="input__box">
                         <span class="input__help"></span>
-                        <input class="input__text" type="text">
+                        <input class="input__text" type="text" th:field="*{metodoContacto}">
                         <label class="input__label">Metodo de contacto:</label>
                     </div>
                     <div class="input__box">
                         <span class="input__help"></span>
-                        <input class="input__text" type="text">
+                        <input class="input__text" type="text" th:field="*{areaContacto}">
                         <label class="input__label">Area correspondiente:</label>
                     </div>
 
@@ -37,13 +37,13 @@
                 </div>
                 <div class="input__box">
                     <span class="input__help"></span>
-                    <textarea class="input__text input__area"></textarea>
+                    <textarea class="input__text input__area" th:field="*{razonContacto}"></textarea>
                     <label class="input__label">Razon de contacto:</label>
                 </div>
 
                 <div class="button__container">
                     <button class="btn btn-out">Reestablecer</button>
-                    <button class="btn btn-ok">Solicitar Contacto</button>
+                    <button type="submit" class="btn btn-ok">Solicitar Contacto</button>
                 </div>
 
             </form>
