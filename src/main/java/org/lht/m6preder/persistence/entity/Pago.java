@@ -1,31 +1,28 @@
 package org.lht.m6preder.persistence.entity;
 
-
 import lombok.*;
+
 import javax.persistence.*;
+import java.sql.Date;
 
 @Getter
 @Setter
-@ToString
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 @Entity
-public class Capacitacion {
+public class Pago {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long idCapacitacion;
-
-  private int rutCliente;
-  private String dia;
-  private String hora;
-  private String lugar;
-  private int duracion;
-  private int cantidadAsistentes;
+  private Long idPago;
 
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "id_usuario")
   @ToString.Exclude
   private Cliente cliente;
+
+  private Integer monto;
+  private Date fechaPago;
 
 }
