@@ -2,8 +2,11 @@ package org.lht.m6preder.persistence.entity;
 
 
 import lombok.*;
-import javax.persistence.*;
-import java.sql.Timestamp;
+
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.PrimaryKeyJoinColumn;
 
 
 @Getter

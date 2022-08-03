@@ -16,6 +16,7 @@ public class Revision {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long idRevision;
 
+
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "id_visita", insertable = false, updatable = false)
   @ToString.Exclude

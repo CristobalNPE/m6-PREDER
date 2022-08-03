@@ -7,7 +7,6 @@ import org.lht.m6preder.persistence.entity.Cliente;
 public class Training {
 
   private Long trainingID;
-
   private int customerStr;
   private String day;
   private String time;
