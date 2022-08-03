@@ -8,7 +8,8 @@ public class Attendance {
 
   private Long attendantId;
   private Long trainingId;
-
   private Attendant attendant;
   private Training training;
+
+
 }

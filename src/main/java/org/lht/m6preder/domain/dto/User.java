@@ -14,4 +14,5 @@ public class User {
   private Date birthday;
   private Integer dni;
   private Timestamp updatedAt;
+
 }

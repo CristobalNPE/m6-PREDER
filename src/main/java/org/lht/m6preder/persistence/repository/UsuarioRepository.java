@@ -4,7 +4,6 @@ import org.lht.m6preder.domain.dto.User;
 import org.lht.m6preder.domain.repository.UserRepository;
 import org.lht.m6preder.persistence.crud.UsuarioCrudRepository;
 import org.lht.m6preder.persistence.entity.Usuario;
-import org.lht.m6preder.persistence.mapper.AttendantMapper;
 import org.lht.m6preder.persistence.mapper.UserMapper;
 import org.springframework.stereotype.Repository;
 
