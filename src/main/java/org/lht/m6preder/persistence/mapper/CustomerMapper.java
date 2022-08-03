@@ -14,10 +14,12 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import java.util.List;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = {UserMapper.class})
 public interface CustomerMapper {
 
   @Mappings({
+          @Mapping(source = "idCliente", target = "customerId"),
+          @Mapping(source = "usuario", target = "user"),
           @Mapping(source = "rut", target = "str"),
           @Mapping(source = "nombres", target = "firstName"),
           @Mapping(source = "apellidos", target = "lastName"),
@@ -26,7 +28,8 @@ public interface CustomerMapper {
           @Mapping(source = "sistemaSalud", target = "healthSystem"),
           @Mapping(source = "direccion", target = "address"),
           @Mapping(source = "comuna", target = "district"),
-          @Mapping(source = "edad", target = "age")
+          @Mapping(source = "edad", target = "age"),
+
   })
   Customer toCustomer(Cliente cliente);
 

@@ -9,12 +9,15 @@ import org.mapstruct.Mappings;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = {UserMapper.class})
 public interface ManagerMapper {
 
   @Mappings({
+          @Mapping(source = "idAdministrativo", target = "managerId"),
+          @Mapping(source = "usuario", target = "user"),
           @Mapping(source = "area", target = "section"),
-          @Mapping(source = "expPrevia", target = "priorExp")
+          @Mapping(source = "expPrevia", target = "priorExp"),
+
   })
   Manager toManager(Administrativo administrativo);
 

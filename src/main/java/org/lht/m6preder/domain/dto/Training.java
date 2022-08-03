@@ -13,5 +13,5 @@ public class Training {
   private String place;
   private int duration;
   private int numberOfAttendants;
-  private Cliente customer;
+  private Customer customer;
 }

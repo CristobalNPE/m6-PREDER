@@ -1,6 +1,7 @@
 package org.lht.m6preder.persistence.entity;
 
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Timestamp;
@@ -12,8 +13,6 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "usuario")
-@Inheritance(strategy = InheritanceType.JOINED)
 public class Usuario {
 
   @Id
@@ -24,6 +23,8 @@ public class Usuario {
   private String nombre;
   private Date fechaNacimiento;
   private Integer run;
+
+  @CreationTimestamp
   private Timestamp ultimaActualizacion;
 
 }

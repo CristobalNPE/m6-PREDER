@@ -11,7 +11,7 @@ public interface ProfessionalRepository {
 
   Optional<Professional> findById(Long professionalId);
 
-  Professional save(Professional professionalId);
+  Professional save(Professional professional);
 
   void delete(Long professionalId);
 

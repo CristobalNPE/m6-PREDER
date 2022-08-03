@@ -8,7 +8,7 @@ import java.sql.Date;
 public class Payment {
   private Long paymentId;
 
-  private Cliente customer;
+  private Customer customer;
   private Integer amount;
   private Date paymentDate;
 }

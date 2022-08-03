@@ -5,7 +5,10 @@ import lombok.Data;
 import java.sql.Date;
 
 @Data
-public class Professional extends User {
+public class Professional{
+
+  private Long professionalId;
+  private User user;
 
   private String degree;
   private Date entryDate;

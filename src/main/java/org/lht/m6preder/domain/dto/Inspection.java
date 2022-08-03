@@ -13,8 +13,8 @@ public class Inspection {
 
   private Long inspectionId;
 
-  private Cliente inspectedCustomer;
-  private Profesional inspectorProfessional;
+  private Customer inspectedCustomer;
+  private Professional inspectorProfessional;
   private Date day;
   private Time time;
   private String place;

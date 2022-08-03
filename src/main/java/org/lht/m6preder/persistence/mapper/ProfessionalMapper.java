@@ -1,20 +1,27 @@
 package org.lht.m6preder.persistence.mapper;
 
 import org.lht.m6preder.domain.dto.Professional;
+import org.lht.m6preder.domain.dto.User;
 import org.lht.m6preder.persistence.entity.Profesional;
+import org.lht.m6preder.persistence.entity.Usuario;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import java.util.List;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = {UserMapper.class})
 public interface ProfessionalMapper {
 
   @Mappings({
+          @Mapping(source = "idProfesional", target = "professionalId"),
+          @Mapping(source = "usuario", target = "user"),
           @Mapping(source = "titulo", target = "degree"),
-          @Mapping(source = "fechaIngreso", target = "entryDate")
+          @Mapping(source = "fechaIngreso", target = "entryDate"),
+
   })
   Professional toProfessional(Profesional profesional);
 
@@ -24,5 +31,3 @@ public interface ProfessionalMapper {
   Profesional toProfesional(Professional professional);
 
 }
-
-

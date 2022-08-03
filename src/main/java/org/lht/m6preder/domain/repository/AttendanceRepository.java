@@ -8,9 +8,9 @@ import java.util.Optional;
 public interface AttendanceRepository {
   List<Attendance> findAll();
 
-  Optional<Attendance> findById(Long attendanceId);
+  Optional<Attendance> findById(Long attendanceId, Long trainingId);
 
   Attendance save(Attendance attendance);
 
-  void delete(Long attendanceId);
+  void delete(Long attendanceId, Long trainingId);
 }
