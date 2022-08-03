@@ -17,7 +17,7 @@ public class Revision {
   private Long idRevision;
 
   @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "id_visita")
+  @JoinColumn(name = "id_visita", insertable = false, updatable = false)
   @ToString.Exclude
   private Visita visita;
 

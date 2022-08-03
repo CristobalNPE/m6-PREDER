@@ -24,7 +24,7 @@ public class Capacitacion {
   private int cantidadAsistentes;
 
   @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "id_usuario")
+  @JoinColumn(name = "id_usuario", insertable = false, updatable = false)
   @ToString.Exclude
   private Cliente cliente;
 

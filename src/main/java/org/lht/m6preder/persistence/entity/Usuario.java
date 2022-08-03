@@ -24,7 +24,7 @@ public class Usuario {
   private String nombre;
   private Date fechaNacimiento;
   private Integer run;
-  private Timestamp updatedAt;
+  private Timestamp ultimaActualizacion;
 
 }
 

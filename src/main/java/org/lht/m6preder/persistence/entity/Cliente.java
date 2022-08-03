@@ -3,9 +3,8 @@ package org.lht.m6preder.persistence.entity;
 
 import lombok.*;
 import javax.persistence.*;
-import java.sql.Date;
 import java.sql.Timestamp;
-import java.util.List;
+
 
 @Getter
 @Setter
@@ -13,6 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@PrimaryKeyJoinColumn(name = "idCliente")
 public class Cliente extends Usuario {
 
   private int rut;
@@ -27,7 +27,5 @@ public class Cliente extends Usuario {
   private String direccion;
   private String comuna;
   private int edad;
-  private Timestamp updatedAt;
-
 
 }
