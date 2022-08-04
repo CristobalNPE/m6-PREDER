@@ -11,6 +11,6 @@ public class InicioController {
 
   @GetMapping("/")
   public String mostrarInicio() {
-    return "index";
+    return "views-general/index";
   }
 }

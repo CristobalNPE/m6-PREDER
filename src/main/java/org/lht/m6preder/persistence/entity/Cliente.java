@@ -18,8 +18,8 @@ public class Cliente{
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long idCliente;
 
-  @OneToOne
-  @JoinColumn(name = "id_usuario", insertable = false, updatable = false)
+  @OneToOne(cascade = {CascadeType.ALL})
+  @JoinColumn(name = "id_usuario", insertable = true, updatable = false)
   private Usuario usuario;
 
   private int rut;

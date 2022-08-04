@@ -16,7 +16,7 @@ public class PaymentService {
     this.repo = repo;
   }
 
-  public List<Payment> findAlaa() {
+  public List<Payment> findAll() {
     return repo.findAll();
   }
 

@@ -22,7 +22,7 @@ public class ContactoController {
   @PostMapping
   public String procesarContacto(Contacto contacto){
     log.info("Contacto Solicitado: {}", contacto);
-    return "redirect:/contacto";
+    return "redirect:/views-cliente/contacto";
   }
 
 

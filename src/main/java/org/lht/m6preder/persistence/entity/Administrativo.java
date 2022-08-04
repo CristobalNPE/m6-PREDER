@@ -16,8 +16,8 @@ public class Administrativo {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long idAdministrativo;
 
-  @OneToOne
-  @JoinColumn(name = "id_usuario", insertable = false, updatable = false)
+  @OneToOne(cascade = {CascadeType.ALL})
+  @JoinColumn(name = "id_usuario", insertable = true, updatable = false)
   private Usuario usuario;
 
   private String area;
