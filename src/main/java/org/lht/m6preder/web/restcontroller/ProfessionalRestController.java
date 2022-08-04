@@ -17,7 +17,6 @@ public class ProfessionalRestController {
   public ProfessionalRestController(ProfessionalService service) {
     this.service = service;
   }
-
   @GetMapping("/all")
   public ResponseEntity<List<Professional>> findAll() {
     return new ResponseEntity<>(service.findAll(), HttpStatus.OK);
