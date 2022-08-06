@@ -21,7 +21,7 @@ public class UsuarioController {
 
   @GetMapping("/listar")
   public String listar(Model model) {
-    model.addAttribute("listarUsuarios", this.service.findAll());
+    model.addAttribute("listaUsuarios", this.service.findAll());
     return "views-administrativo/lista_usuarios";
   }
 

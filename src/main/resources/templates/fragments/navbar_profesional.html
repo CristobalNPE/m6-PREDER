@@ -26,35 +26,28 @@
                     </a>
                 </li>
                 <li>
-                    <a th:classappend="${#httpServletRequest.getRequestURI().contains('/contacto') ? 'active' : ''}"
-                       class="navbar__link" th:href="@{/contacto}">
-                        <span class="material-symbols-outlined nav-icon">contact_support</span>
-                        <p class="navbar__text">Contacto</p>
-                        <span class="navbar__tooltip">Contacto</span>
+                    <a th:classappend="${#httpServletRequest.getRequestURI().contains('/visita') ? 'active' : ''}"
+                       class="navbar__link" th:href="@{/visita/listar}">
+                        <span class="material-symbols-outlined nav-icon">tour</span>
+                        <p class="navbar__text">Visitas</p>
+                        <span class="navbar__tooltip">Visitas</span>
                     </a>
                 </li>
                 <li>
-                    <a th:classappend="${#httpServletRequest.getRequestURI().contains('/capacitacion/') ? 'active' : ''}"
-                       class="navbar__link" th:href="@{/capacitacion/listar/}">
-                        <span class="material-symbols-outlined nav-icon">school</span>
-                        <p class="navbar__text">Capacitaciones</p>
-                        <span class="navbar__tooltip">Capacitaciones</span>
+                    <a th:classappend="${#httpServletRequest.getRequestURI().contains('/revision/') ? 'active' : ''}"
+                       class="navbar__link" th:href="@{/revision/listar/}">
+                        <span class="material-symbols-outlined nav-icon">checklist</span>
+                        <p class="navbar__text">Revisiones</p>
+                        <span class="navbar__tooltip">Revisiones</span>
                     </a>
                 </li>
-                <li>
-                    <a onclick="spanPopup('Sección sin implementar', 'Esta sección aun se encuentra sin implementar.')"
-                       class="navbar__link" href="#">
-                        <span class="material-symbols-outlined nav-icon">group</span>
-                        <p class="navbar__text">Asistentes</p>
-                        <span class="navbar__tooltip">Asistentes</span>
-                    </a>
-                </li>
+
                 <li>
                     <a onclick="spanPopup('Sección sin implementar', 'Esta sección aun se encuentra sin implementar.')"
                        class="navbar__link" href="#">
-                        <span class="material-symbols-outlined nav-icon">local_hospital</span>
-                        <p class="navbar__text">Accidentes</p>
-                        <span class="navbar__tooltip">Accidentes</span>
+                        <span class="material-symbols-outlined nav-icon">tips_and_updates</span>
+                        <p class="navbar__text">Asesorias</p>
+                        <span class="navbar__tooltip">Asesorias</span>
                     </a>
                 </li>
 
@@ -66,7 +59,7 @@
 
             <div class="perfil__info">
                 <p class="perfil__usuario-nombre">Juanito Perez</p>
-                <p class="perfil__usuario-perfil">Perfil Cliente</p>
+                <p class="perfil__usuario-perfil">Perfil Profesional</p>
             </div>
 
             <a class="perfil__logout" href="#">

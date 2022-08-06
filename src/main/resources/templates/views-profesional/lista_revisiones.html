@@ -12,11 +12,11 @@
             <span class="material-symbols-outlined close-icon" id="close-icon">close</span>
         </button>
 
-        <nav th:replace="fragments/navbar_cliente.html :: navbar"></nav>
+        <nav th:replace="fragments/navbar_profesional.html :: navbar"></nav>
 
         <main class="principal">
-            <h1>Capacitaciones Solicitadas</h1>
-            <h2>Lista de capacitaciones asociadas a su cuenta.</h2>
+            <h1>Revisiones agendadas?</h1>
+            <h2>Blah blah blah bla bla bla bla.</h2>
 
             <table id="users" class="main__table responsive nowrap" width="100%">
                 <thead>
@@ -35,12 +35,12 @@
 
 
                     <tr th:each="capa : ${listaCapacitaciones}">
-                        <td th:text="${capa.customerStr}">99999999</td>
-                        <td th:text="${capa.day}">Lunes</td>
-                        <td th:text="${capa.time}">17:30</td>
-                        <td th:text="${capa.place}">Una Casa</td>
-                        <td th:text="${capa.duration}">45</td>
-                        <td th:text="${capa.numberOfAttendants}">28</td>
+                        <td th:text="${capa.rutCliente}">99999999</td>
+                        <td th:text="${capa.dia}">Lunes</td>
+                        <td th:text="${capa.hora}">17:30</td>
+                        <td th:text="${capa.lugar}">Una Casa</td>
+                        <td th:text="${capa.duracion}">45</td>
+                        <td th:text="${capa.cantidadAsistentes}">28</td>
                         <td>
                             <a href="#"><span class="material-symbols-outlined table__icon">visibility</span></a>
                             <a href="#"><span class="material-symbols-outlined table__icon">edit_note</span></a>

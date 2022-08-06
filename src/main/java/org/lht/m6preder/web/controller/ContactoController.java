@@ -15,7 +15,7 @@ public class ContactoController {
 
   @GetMapping
   public String mostrarFormularioContacto(){
-    return "contacto";
+    return "views-cliente/contacto";
   }
 
 

@@ -150,6 +150,7 @@ picture {
     opacity: 0;
     transition: opacity .4s ease-in-out;
     box-shadow: 1px 5px 15px 5px rgba(66, 66, 66, 0.144);
+    z-index: 99;
 }
 
 .active {

@@ -6,13 +6,12 @@
     </head>
     <body>
 
-
         <button class="hamburger">
             <span class="material-symbols-outlined menu-icon" id="menu-icon">menu</span>
             <span class="material-symbols-outlined close-icon" id="close-icon">close</span>
         </button>
 
-        <nav th:replace="fragments/navbar_cliente.html :: navbar"></nav>
+        <nav th:replace="fragments/navbar_administrativo.html :: navbar"></nav>
 
         <main class="principal">
             <h1>Usuarios Registrados</h1>
@@ -21,28 +20,26 @@
             <table id="users" class="main__table responsive nowrap" width="100%">
                 <thead>
                     <tr>
+                        <th>ID</th>
                         <th>Nombre</th>
-                        <th>Fecha Nacimiento</th>
+                        <th>F.Nacimiento</th>
                         <th>RUN</th>
                         <th>_</th>
                     </tr>
                 </thead>
 
                 <tbody>
-
-
                     <tr th:each="usuario : ${listaUsuarios}">
-                        <td th:text="${usuario.nombre}"></td>
-                        <td th:text="${usuario.fechaNacimiento}"></td>
-                        <td th:text="${usuario.run}"></td>
+                        <td th:text="${usuario.userId}"></td>
+                        <td th:text="${usuario.name}"></td>
+                        <td th:text="${usuario.birthday}"></td>
+                        <td th:text="${usuario.dni}"></td>
                         <td>
                             <a href="#"><span class="material-symbols-outlined table__icon">visibility</span></a>
                             <a href="#"><span class="material-symbols-outlined table__icon">edit_note</span></a>
                         </td>
                     </tr>
-
                 </tbody>
-
             </table>
 
 
@@ -67,3 +64,8 @@
         <script th:src="@{/js/script.js}"></script>
     </body>
 </html>
+
+<!--
+https://www.figma.com/file/kkcGpqhXAo8VSf2DjGlAUb/PanelDeUsuarioGrupal1
+
+-->

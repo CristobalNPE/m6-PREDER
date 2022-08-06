@@ -24,7 +24,7 @@ public class PagoController {
 
   @GetMapping("/nuevo")
   public String mostrarFormularioIngresoPago() {
-    return "views-administrativo/formulario-pago";
+    return "views-administrativo/formulario_pago";
   }
 
   @PostMapping("/nuevo")

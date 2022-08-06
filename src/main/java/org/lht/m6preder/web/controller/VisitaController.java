@@ -46,7 +46,16 @@ public class VisitaController {
   }
 
 
-
+/*
+* Profesional -> crea Visita
+* Pofesional ->Lista con visitas
+*
+*       -Visita al jumbo
+*       -Visita al sodimac
+*
+* Administrativo -> crea checklist(revisiones)
+*
+* */
 
 
 
