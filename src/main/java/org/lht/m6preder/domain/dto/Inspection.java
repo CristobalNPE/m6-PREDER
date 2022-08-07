@@ -2,12 +2,6 @@ package org.lht.m6preder.domain.dto;
 
 import lombok.Data;
 
-import org.lht.m6preder.persistence.entity.Cliente;
-import org.lht.m6preder.persistence.entity.Profesional;
-
-import java.sql.Date;
-import java.sql.Time;
-
 @Data
 public class Inspection {
 
@@ -15,8 +9,8 @@ public class Inspection {
 
   private Customer inspectedCustomer;
   private Professional inspectorProfessional;
-  private Date day;
-  private Time time;
+  private String day;
+  private String time;
   private String place;
   private String comment;
 }

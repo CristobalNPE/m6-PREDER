@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+    <head th:include="fragments/head.html :: headFragment">
+        <title id="tituloPagina">PREDER | Cliente</title>
+    </head>
+
+    <body>
+
+        <button class="hamburger">
+            <span class="material-symbols-outlined menu-icon" id="menu-icon">menu</span>
+            <span class="material-symbols-outlined close-icon" id="close-icon">close</span>
+        </button>
+
+        <nav th:replace="fragments/navbar_administrativo.html :: navbar"></nav>
+
+        <main class="principal">
+            <h1>Registrar un nuevo Cliente</h1>
+            <h2>Ingrese la información para registrar un nuevo cliente al sistema</h2>
+
+            <form method="post"  class="form__container" id="cliente_form" th:object="${cliente}">
+
+                <div class="form__main">
+
+                    <div class="input__box">
+                        <span class="input__help"></span>
+                        <input class="input__text" type="text" name="RUT Cliente" id="rut"  th:field="*{str}">
+                        <label class="input__label">Rut Cliente:</label>
+                    </div>
+
+                    <div class="input__box">
+                        <span class="input__help"></span>
+                        <input class="input__text" type="text" name="nombres" id="nombres"  th:field="*{firstName}">
+                        <label class="input__label">Nombres:</label>
+                    </div>
+
+                    <div class="input__box">
+                        <span class="input__help"></span>
+                        <input class="input__text" type="text" name="apellidos" id="apellidos"  th:field="*{lastName}">
+                        <label class="input__label">Apellidos:</label>
+                    </div>
+
+                    <div class="input__box">
+                        <span class="input__help"></span>
+                        <input class="input__text" type="text" name="telefono" id="telefono"  th:field="*{phoneNumber}">
+                        <label class="input__label">Telefono:</label>
+                    </div>
+
+                    <div class="input__box">
+                        <span class="input__help"></span>
+                        <input class="input__text" type="text" name="afp" id="afp"  th:field="*{pfa}">
+                        <label class="input__label">AFP:</label>
+                    </div>
+
+                    <div class="input__box">
+                        <span class="input__help"></span>
+                        <select class="input__text" id="sistSalud" th:field="*{healthSystem}">
+                            <option value="fonasa">FONASA</option>
+                            <option value="isapre">Isapre</option>
+
+                        </select>
+                        <label class="input__label">Dia:</label>
+                    </div>
+
+                    <div class="input__box">
+                        <span class="input__help"></span>
+                        <input class="input__text" type="text" name="direccion" id="direccion"  th:field="*{address}">
+                        <label class="input__label">Direccion:</label>
+                    </div>
+
+                    <div class="input__box">
+                        <span class="input__help"></span>
+                        <input class="input__text" type="text" name="comuna" id="comuna"  th:field="*{district}">
+                        <label class="input__label">Comuna:</label>
+                    </div>
+
+                    <div class="input__box">
+                        <span class="input__help"></span>
+                        <input class="input__text" type="text" name="edad" id="edad"  th:field="*{age}">
+                        <label class="input__label">Edad:</label>
+                    </div>
+
+                </div>
+
+                <div class="button__container">
+                    <button type="reset" class="btn btn-out">Reestablecer</button>
+                    <button type="submit" class="btn btn-ok">Registrar</button>
+                </div>
+
+            </form>
+        </main>
+
+        <script th:src="@{/js/script.js}"></script>
+        <script th:src="@{/js/validaciones.js}"></script>
+    </body>
+
+
+
+
+
+
+
+</html>

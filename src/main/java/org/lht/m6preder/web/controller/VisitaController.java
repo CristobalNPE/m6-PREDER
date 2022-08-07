@@ -23,12 +23,13 @@ public class VisitaController {
 
   @GetMapping("/nuevo")
   public String mostrarFormularioNuevaVisita() {
-    return "views-profesional/formulario-visita";
+    return "views-profesional/formulario_visita";
   }
 
   @PostMapping("/nuevo")
   public String addVisita(Inspection inspection) {
-    log.info("Visita creada; {}", inspection);
+
+    log.info("Visita creada; {}", inspection.toString());
 
     this.service.save(inspection);
     return "redirect:/visita/listar";
@@ -37,7 +38,7 @@ public class VisitaController {
   @GetMapping("/listar")
   public String listar(Model model) {
     model.addAttribute("listarVisitas", this.service.findAll());
-    return "views-profesional/lista_visita";
+    return "views-profesional/lista_visitas";
   }
 
   @ModelAttribute(name = "visita")
