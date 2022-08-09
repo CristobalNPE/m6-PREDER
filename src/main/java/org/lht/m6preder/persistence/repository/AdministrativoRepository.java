@@ -43,4 +43,11 @@ public class AdministrativoRepository implements ManagerRepository {
   public void delete(Long managerId) {
     crud.deleteById(managerId);
   }
+
+  @Override
+  public Optional<Manager> getByUsuario_IdUsuario(Long userId) {
+    return crud
+            .getByUsuario_IdUsuario(userId)
+            .map(mapper::toManager);
+  }
 }

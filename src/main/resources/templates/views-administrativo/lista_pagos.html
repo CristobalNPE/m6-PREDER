@@ -20,30 +20,27 @@
             <table id="users" class="main__table responsive nowrap" width="100%">
                 <thead>
                     <tr>
-                        <th>ID_Pago</th>
-                        <th>ID_Cliente</th>
-                        <th>Monto</th>
+
+                        <th>ID Cliente</th>
+                        <th>Monto($)</th>
                         <th>F.Pago</th>
-                        <th>_</th>
+
                     </tr>
                 </thead>
 
                 <tbody>
                     <tr th:each="pago : ${listaPago}">
-                        <td th:text="${pago.paymentId}">11</td>
-                        <td th:text="${pago.customer}">11</td>
+
+                        <td th:text="${pago.customer.customerId}">11</td>
                         <td th:text="${pago.amount}">11</td>
                         <td th:text="${pago.paymentDate}">11</td>
-                        <td>
-                            <a href="#"><span class="material-symbols-outlined table__icon">visibility</span></a>
-                            <a href="#"><span class="material-symbols-outlined table__icon">edit_note</span></a>
-                        </td>
+
                     </tr>
                 </tbody>
             </table>
 
             <div class="button__container mt-3">
-                <a th:href="@{/pago/nuevo}" class="btn btn-ok">
+                <a th:href="@{/pago/administrativo/listarClientes}" class="btn btn-ok">
                     <span class="material-symbols-outlined">school</span>
                     Ingrese Nuevo Pago</a>
             </div>

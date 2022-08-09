@@ -44,4 +44,11 @@ public class CapacitacionRepository implements TrainingRepository {
   public void delete(Long trainingId) {
     crud.deleteById(trainingId);
   }
+
+  @Override
+  public List<Training> findAllByCliente_Usuario_IdUsuario(Long userId) {
+    return mapper.toTrainings((List<Capacitacion>) crud.findAllByCliente_Usuario_IdUsuario(userId));
+  }
+
+
 }

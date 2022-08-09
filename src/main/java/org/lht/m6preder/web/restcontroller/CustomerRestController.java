@@ -30,7 +30,7 @@ public class CustomerRestController {
             .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
   }
 
-  @PostMapping
+  @PostMapping("/save")
   public ResponseEntity<Customer> save(@RequestBody Customer customer) {
     return new ResponseEntity<>(service.save(customer), HttpStatus.OK);
   }

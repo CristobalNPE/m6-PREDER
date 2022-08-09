@@ -45,4 +45,11 @@ public class ClienteRepository implements CustomerRepository {
   public void delete(Long customerId) {
     crud.deleteById(customerId);
   }
+
+  @Override
+  public Optional<Customer> getByUsuario_IdUsuario(Long userId) {
+    return crud
+            .getByUsuario_IdUsuario(userId)
+            .map(mapper::toCustomer);
+  }
 }

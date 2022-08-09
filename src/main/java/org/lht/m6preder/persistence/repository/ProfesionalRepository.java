@@ -44,4 +44,11 @@ public class ProfesionalRepository implements ProfessionalRepository {
   public void delete(Long professionalId) {
     crud.deleteById(professionalId);
   }
+
+  @Override
+  public Optional<Professional> getByUsuario_IdUsuario(Long userId) {
+    return crud
+            .getByUsuario_IdUsuario(userId)
+            .map(mapper::toProfessional);
+  }
 }

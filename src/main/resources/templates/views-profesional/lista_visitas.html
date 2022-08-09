@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org">
@@ -16,36 +15,37 @@
 
         <main class="principal">
             <h1>Visitas Registradas</h1>
-            <h2>Lista de visitas registradss en sistema.</h2>
+            <h2>Lista de visitas registradas en sistema.</h2>
 
             <table id="users" class="main__table responsive nowrap" width="100%">
                 <thead>
                     <tr>
-                        <th>Id_cliente</th>
-                        <th>Id_Profesional</th>
+                        <th>ID Cliente</th>
                         <th>Día</th>
                         <th>Hora</th>
                         <th>Lugar</th>
                         <th>Comentario</th>
-                        <th>_</th>
+
                     </tr>
                 </thead>
 
                 <tbody>
                     <tr th:each="visita : ${listarVisitas}">
                         <td th:text="${visita.inspectedCustomer.customerId}"></td>
-                        <td th:text="${visita.inspectorProfessional.professionalId}"></td>
                         <td th:text="${visita.day}"></td>
                         <td th:text="${visita.time}"></td>
                         <td th:text="${visita.place}"></td>
                         <td th:text="${visita.comment}"></td>
-                        <td>
-                            <a href="#"><span class="material-symbols-outlined table__icon">visibility</span></a>
-                            <a href="#"><span class="material-symbols-outlined table__icon">edit_note</span></a>
-                        </td>
+
                     </tr>
                 </tbody>
             </table>
+
+            <div class="button__container mt-3">
+                <a th:href="@{/visita/profesional/listarClientes}" class="btn btn-ok">
+                    <span class="material-symbols-outlined">school</span>
+                    Ingrese Nueva Visita</a>
+            </div>
 
 
         </main>

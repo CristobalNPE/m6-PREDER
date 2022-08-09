@@ -1,6 +1,7 @@
 package org.lht.m6preder.domain.service;
 
 import org.lht.m6preder.domain.dto.Inspection;
+import org.lht.m6preder.domain.dto.Training;
 import org.lht.m6preder.domain.repository.InspectionRepository;
 import org.springframework.stereotype.Service;
 
@@ -34,6 +35,10 @@ public class InspectionService {
               repo.delete(inspectionId);
               return true;
             }).orElse(false);
+  }
+
+  public List<Inspection> findAllByUserId(Long userId) {
+    return repo.findAllByProfesionalQueVisita_Usuario_IdUsuario(userId);
   }
 
 }

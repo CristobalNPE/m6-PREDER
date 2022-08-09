@@ -1,5 +1,6 @@
 package org.lht.m6preder.persistence.repository;
 
+import lombok.RequiredArgsConstructor;
 import org.lht.m6preder.domain.dto.User;
 import org.lht.m6preder.domain.repository.UserRepository;
 import org.lht.m6preder.persistence.crud.UsuarioCrudRepository;
@@ -11,15 +12,11 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
+@RequiredArgsConstructor
 public class UsuarioRepository implements UserRepository {
 
   private final UsuarioCrudRepository crud;
   private final UserMapper mapper;
-
-  public UsuarioRepository(UsuarioCrudRepository crud, UserMapper mapper) {
-    this.crud = crud;
-    this.mapper = mapper;
-  }
 
   @Override
   public List<User> findAll() {
@@ -34,6 +31,12 @@ public class UsuarioRepository implements UserRepository {
   }
 
   @Override
+  public Optional<User> findByUsername(String username) {
+    return crud.findByNombreUsuario(username)
+            .map(mapper::toUser);
+  }
+
+  @Override
   public User save(User user) {
     return mapper.toUser(crud.save(mapper.toUsuario(user)));
   }
@@ -42,5 +45,11 @@ public class UsuarioRepository implements UserRepository {
   public void delete(Long userId) {
     crud.deleteById(userId);
 
+  }
+
+
+  @Override
+  public boolean existsByUsername(String username) {
+    return crud.existsByNombreUsuario(username);
   }
 }

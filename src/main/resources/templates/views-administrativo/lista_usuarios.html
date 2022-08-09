@@ -22,9 +22,9 @@
                     <tr>
                         <th>ID</th>
                         <th>Nombre</th>
-                        <th>F.Nacimiento</th>
                         <th>RUN</th>
-                        <th>_</th>
+                        <th>Rol</th>
+                        <th>Editar</th>
                     </tr>
                 </thead>
 
@@ -32,15 +32,20 @@
                     <tr th:each="usuario : ${listaUsuarios}">
                         <td th:text="${usuario.userId}"></td>
                         <td th:text="${usuario.name}"></td>
-                        <td th:text="${usuario.birthday}"></td>
                         <td th:text="${usuario.dni}"></td>
+                        <td th:text="${usuario.getFirstRole()}"></td>
                         <td>
-                            <a href="#"><span class="material-symbols-outlined table__icon">visibility</span></a>
-                            <a href="#"><span class="material-symbols-outlined table__icon">edit_note</span></a>
+                            <a th:href="@{/{rol}/administrativo/editar/{userId}(rol=${usuario.getFormattedRole()}, userId=${usuario.userId})}"><span class="material-symbols-outlined table__icon">edit_note</span></a>
                         </td>
                     </tr>
                 </tbody>
             </table>
+
+            <div class="button__container-toleft mt-3">
+                <a th:href="@{/customer/administrativo/nuevo}" class="btn btn-ok btn-s"><span class="material-symbols-outlined">person_add</span>Cliente</a>
+                <a th:href="@{/professional/administrativo/nuevo}" class="btn btn-ok btn-s"><span class="material-symbols-outlined">person_add</span>Profesional</a>
+                <a th:href="@{/manager/administrativo/nuevo}" class="btn btn-ok btn-s"><span class="material-symbols-outlined">person_add</span>Administrativo</a>
+            </div>
 
 
         </main>

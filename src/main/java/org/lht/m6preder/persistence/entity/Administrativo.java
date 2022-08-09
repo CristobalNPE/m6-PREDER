@@ -4,19 +4,20 @@ import lombok.*;
 
 import javax.persistence.*;
 
-@Entity
+
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
+@Entity(name = "administrativo")
 public class Administrativo {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long idAdministrativo;
 
-  @OneToOne(cascade = {CascadeType.ALL})
+  @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
   @JoinColumn(name = "id_usuario", insertable = true, updatable = false)
   private Usuario usuario;
 

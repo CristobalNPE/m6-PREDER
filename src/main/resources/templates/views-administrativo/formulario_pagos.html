@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org">
@@ -19,7 +18,8 @@
             <h1>Ingresar un nuevo pago</h1>
             <h2>Ingrese la información para registrar un nuevo pago</h2>
 
-            <form method="post"  class="form__container" id="pago_form" th:object="${pago}">
+            <form method="post" th:action="@{/pago/administrativo/nuevo/{idCliente}(idCliente=${cliente.customerId})}"
+                  class="form__container" id="pago_form" th:object="${pago}">
 
                 <div class="form__main">
 
@@ -31,10 +31,10 @@
 
                     <div class="input__box">
                         <span class="input__help"></span>
-                        <input class="input__text" type="date" id="fechaPago" name="fechaPago"  th:field="*{paymentDate}">
+                        <input class="input__text" type="date" id="fechaPago" name="fechaPago"
+                               th:field="*{paymentDate}">
                         <label class="input__label">Fecha de Pago:</label>
                     </div>
-
 
                 </div>
 

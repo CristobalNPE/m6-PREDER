@@ -11,20 +11,18 @@ import javax.persistence.*;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-public class Cliente{
+@Entity(name = "cliente")
+public class Cliente {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @GeneratedValue(strategy = GenerationType.AUTO)
   private Long idCliente;
 
-  @OneToOne(cascade = {CascadeType.ALL})
+  @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
   @JoinColumn(name = "id_usuario", insertable = true, updatable = false)
   private Usuario usuario;
 
   private int rut;
-  private String nombres;
-  private String apellidos;
   private String telefono;
   private String afp;
 
@@ -34,5 +32,6 @@ public class Cliente{
   private String direccion;
   private String comuna;
   private int edad;
+
 
 }

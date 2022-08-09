@@ -15,8 +15,6 @@ public class Customer{
   private User user;
 
   private int str;
-  private String firstName;
-  private String lastName;
   private String phoneNumber;
   private String pfa;
   private SistemaSalud healthSystem;

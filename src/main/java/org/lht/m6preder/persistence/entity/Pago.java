@@ -18,7 +18,7 @@ public class Pago {
   private Long idPago;
 
   @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
+  @JoinColumn(name = "id_cliente", insertable = true, updatable = true)
   @ToString.Exclude
   private Cliente cliente;
 

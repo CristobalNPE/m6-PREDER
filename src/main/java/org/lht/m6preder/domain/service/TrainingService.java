@@ -16,23 +16,27 @@ public class TrainingService {
     this.repo = repo;
   }
 
-  public List<Training> findAll(){
+  public List<Training> findAll() {
     return repo.findAll();
   }
 
-  public Optional<Training> findById(Long trainingId){
+  public Optional<Training> findById(Long trainingId) {
     return repo.findById(trainingId);
   }
 
-  public Training save(Training training){
+  public Training save(Training training) {
     return repo.save(training);
   }
 
-  public boolean delete(Long trainingId){
+  public boolean delete(Long trainingId) {
     return findById(trainingId)
             .map(capa -> {
               repo.delete(trainingId);
               return true;
             }).orElse(false);
+  }
+
+  public List<Training> findAllByUserId(Long userId) {
+    return repo.findAllByCliente_Usuario_IdUsuario(userId);
   }
 }

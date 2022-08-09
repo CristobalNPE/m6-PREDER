@@ -8,14 +8,17 @@ import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 import java.util.List;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = {RoleMapper.class})
 public interface UserMapper {
 
   @Mappings({
           @Mapping(source = "idUsuario", target = "userId"),
+          @Mapping(source = "nombreUsuario", target = "username"),
+          @Mapping(source = "contrasenia", target = "password"),
           @Mapping(source = "nombre", target = "name"),
           @Mapping(source = "fechaNacimiento", target = "birthday"),
           @Mapping(source = "run", target = "dni"),
+          @Mapping(source = "losRoles", target = "theRoles"),
           @Mapping(source = "ultimaActualizacion", target = "updatedAt")
   })
   User toUser(Usuario usuario);

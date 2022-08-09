@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+>
 
     <nav class="navbar" th:fragment="navbar">
         <div class="popup" id="popup">
@@ -27,7 +29,7 @@
                 </li>
                 <li>
                     <a th:classappend="${#httpServletRequest.getRequestURI().contains('/visita') ? 'active' : ''}"
-                       class="navbar__link" th:href="@{/visita/listar}">
+                       class="navbar__link" th:href="@{/visita/profesional/listar}">
                         <span class="material-symbols-outlined nav-icon">tour</span>
                         <p class="navbar__text">Visitas</p>
                         <span class="navbar__tooltip">Visitas</span>
@@ -58,13 +60,15 @@
             <img class="perfil__foto" th:src="@{/img/preder_profile.jpg}" alt="Foto de Perfil">
 
             <div class="perfil__info">
-                <p class="perfil__usuario-nombre">Juanito Perez</p>
+                <p class="perfil__usuario-nombre" sec:authentication="name">Juanito Perez</p>
                 <p class="perfil__usuario-perfil">Perfil Profesional</p>
             </div>
 
-            <a class="perfil__logout" href="#">
-                <span class="material-symbols-outlined">logout</span>
-            </a>
+            <form th:action="@{/logout}" method="post">
+                <button class="perfil__logout" type="submit">
+                    <span class="material-symbols-outlined">logout</span>
+                </button>
+            </form>
         </div>
     </nav>
 

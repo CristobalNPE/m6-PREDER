@@ -19,12 +19,12 @@ public class Visita {
   private Long idVisita;
 
   @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
+  @JoinColumn(name = "id_cliente", insertable = true, updatable = true)
   @ToString.Exclude
   private Cliente clienteVisitado;
 
   @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "id_profesional", insertable = false, updatable = false)
+  @JoinColumn(name = "id_profesional", insertable = true, updatable = true)
   @ToString.Exclude
   private Profesional profesionalQueVisita;
 

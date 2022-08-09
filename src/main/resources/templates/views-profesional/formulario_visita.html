@@ -18,25 +18,27 @@
             <h1>Ingresar una nueva Visita en Terreno</h1>
             <h2>Ingrese la información para registrar un nueva visita</h2>
 
-            <form method="post"  class="form__container" id="visita_form" th:object="${visita}">
+            <form method="post" class="form__container" id="visita_form" th:object="${visita}"
+                  th:action="@{/visita/profesional/nuevo/{idCliente}(idCliente=${cliente.customerId})}">
 
                 <div class="form__main">
 
                     <div class="input__box">
                         <span class="input__help"></span>
-                        <input class="input__text" type="time" id="dia" name="dia"  th:field="*{day}">
+                        <input class="input__text" type="date" id="dia" name="dia" th:field="*{day}">
                         <label class="input__label">Día:</label>
                     </div>
 
                     <div class="input__box">
                         <span class="input__help"></span>
-                        <input class="input__text" type="time" id="hora" name="hora"  th:field="*{time}">
+                        <input class="input__text" type="time" id="hora" name="hora" th:field="*{time}">
                         <label class="input__label">Hora:</label>
                     </div>
 
                     <div class="input__box">
                         <span class="input__help"></span>
-                        <input class="input__text" type="text" id="lugar" name="lugar" onfocusout="validateLugar()" th:field="*{place}">
+                        <input class="input__text" type="text" id="lugar" name="lugar" onfocusout="validateLugar()"
+                               th:field="*{place}">
                         <label class="input__label">Lugar:</label>
                     </div>
 

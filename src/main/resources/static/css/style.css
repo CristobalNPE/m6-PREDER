@@ -395,6 +395,13 @@ h2 {
     color: var(--text-color-muted)
 }
 
+h3 {
+
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--text-color-muted)
+}
+
 /*-------------- INPUT- TEXT ---------------*/
 .input__box {
     margin-bottom: .3em;
@@ -402,7 +409,7 @@ h2 {
     flex-direction: column-reverse;
 }
 
-.input__text:focus + .input__label {
+.input__text:focus+.input__label {
     font-weight: 400;
 }
 
@@ -411,6 +418,7 @@ h2 {
     font-weight: 200;
     margin-bottom: .3em;
     display: inline-block;
+    color: var(--text-color);
 }
 
 .input__text {
@@ -469,6 +477,7 @@ h2 {
     align-items: center;
     display: flex;
     gap: .5em;
+    text-align: center;
 
 }
 
@@ -545,6 +554,11 @@ h2 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1em;
+
+    /*PROBAR:*/
+    overflow-y: scroll;
+    max-height: 400px;
+
 }
 
 @media (max-width: 1450px) {
@@ -566,8 +580,26 @@ h2 {
     gap: 2em;
 }
 
+.button__container-center {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}
+
+.button__container-toleft {
+    display: flex;
+    justify-content: flex-start;
+    gap: 2em;
+}
+
 @media (max-width: 650px) {
     .button__container {
+        flex-direction: column-reverse;
+    }
+    .button__container-center {
+        flex-direction: column-reverse;
+    }
+    .button__container-toleft {
         flex-direction: column-reverse;
     }
 }
@@ -822,7 +854,7 @@ footer {
     color: var(--text-color) !important;
 }
 
-.dataTables_filter > * {
+.dataTables_filter>* {
     color: var(--text-color-muted) !important;
 }
 
@@ -859,4 +891,52 @@ footer {
 /*--------HELPERS---------*/
 .mt-3 {
     margin-top: 3em;
+}
+
+.mt-2 {
+    margin-top: 2em;
+}
+
+.mt-1 {
+    margin-top: 1em;
+}
+.mt-05 {
+    margin-top: .7em;
+
+}
+
+
+
+
+.login__container {
+    background-color:var(--main-color);
+    max-width: 25.5em;
+    min-width: 25.5em;
+    padding: 1.5em;
+    display: flex;
+    flex-direction: column;
+    height: 37rem;
+
+
+    border-radius: 10px;
+
+    box-shadow: 1px 5px 23px 6px rgba(0, 0, 0, 0.336);
+
+
+}
+
+.center-contents {
+    display: grid;
+    place-items: center;
+    background-color: #39454E;
+}
+
+.login__help {
+    margin-top: 2em;
+    text-align: center;
+    font-size: 1rem;
+    color: var(--color-bad);
+}
+.txt-c {
+    text-align: center;
 }

@@ -1,8 +1,11 @@
 package org.lht.m6preder.web.controller;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.lht.m6preder.domain.dto.Customer;
 import org.lht.m6preder.domain.dto.Training;
 
+import org.lht.m6preder.domain.service.CustomerService;
 import org.lht.m6preder.domain.service.TrainingService;
 
 import org.springframework.stereotype.Controller;
@@ -16,35 +19,41 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Slf4j
 @Controller
 @RequestMapping("/capacitacion")
+@RequiredArgsConstructor
 public class CapacitacionController {
 
   private final TrainingService service;
+  private final CustomerService customerService;
 
-  public CapacitacionController(TrainingService service) {
-    this.service = service;
-  }
 
-  @GetMapping("/nueva")
+  @GetMapping("/cliente/nueva")
   public String mostrarFormularioNuevaCapacitacion() {
     return "views-cliente/formulario_capacitacion";
   }
 
-  @GetMapping("/editar")
+  @GetMapping("/cliente/editar")
   public String mostrarFormularioEditarCapacitacion() {
     return "views-cliente/formulario_editarCapacitacion";
   }
 
-  @PostMapping("/nueva")
-  public String addCapacitacion(Training training) {
+  @PostMapping("/cliente/nueva")
+  public String addCapacitacion(Training training, Model model) {
     log.info("Capacitacion creada: {}", training);
 
+    Customer customer = customerService.findById((Long) model.getAttribute("idForRole")).get();
+
+    training.setCustomer(customer);
+    training.getCustomer().setCustomerId(customer.getCustomerId());
+
     this.service.save(training);
-    return "redirect:/capacitacion/listar";
+    return "redirect:/capacitacion/cliente/listar";
   }
 
-  @GetMapping("/listar")
+  @GetMapping("/cliente/listar")
   public String listar(Model model) {
-    model.addAttribute("listaCapacitaciones", this.service.findAll());
+    Long idUsuario = (Long) model.getAttribute("usuarioId");
+
+    model.addAttribute("listaCapacitaciones", this.service.findAllByUserId(idUsuario));
     return "views-cliente/lista_capacitaciones";
   }
 

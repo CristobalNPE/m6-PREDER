@@ -45,4 +45,9 @@ public class VisitaRepository implements InspectionRepository {
     crud.deleteById(inspectionId);
 
   }
+
+  @Override
+  public List<Inspection> findAllByProfesionalQueVisita_Usuario_IdUsuario(Long userId) {
+    return mapper.toInspections((List<Visita>) crud.findAllByProfesionalQueVisita_Usuario_IdUsuario(userId));
+  }
 }

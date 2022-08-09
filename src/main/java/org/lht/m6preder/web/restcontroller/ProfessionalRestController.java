@@ -29,7 +29,7 @@ public class ProfessionalRestController {
             .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
   }
 
-  @PostMapping
+  @PostMapping("/save")
   public ResponseEntity<Professional> save(@RequestBody Professional professional) {
     return new ResponseEntity<>(service.save(professional), HttpStatus.OK);
   }

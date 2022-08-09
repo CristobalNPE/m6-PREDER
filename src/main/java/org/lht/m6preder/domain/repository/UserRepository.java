@@ -11,8 +11,13 @@ public interface UserRepository {
 
   Optional<User> findById(Long userId);
 
+  Optional<User> findByUsername(String username);
+
   User save(User user);
 
   void delete(Long userId);
+
+  boolean existsByUsername(String username);
+
 
 }

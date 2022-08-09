@@ -1,44 +1,47 @@
 package org.lht.m6preder.web.controller;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.lht.m6preder.domain.dto.Manager;
+import org.lht.m6preder.domain.dto.Professional;
+import org.lht.m6preder.domain.dto.Role;
 import org.lht.m6preder.domain.service.ManagerService;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 @Slf4j
 @Controller
-@RequestMapping("/administrativo")
+@RequiredArgsConstructor
+@RequestMapping("/manager")
 public class AdministrativoController {
 
   private final ManagerService service;
 
-
-  public AdministrativoController(ManagerService service) {
-    this.service = service;
-  }
-
-  @GetMapping("/nuevo")
+  @GetMapping("/administrativo/nuevo")
   public String mostrarFormularioNuevoAdministrativo() {
     return "views-administrativo/formulario_administrativo";
   }
 
-  @PostMapping("/nuevo")
+  @PostMapping("/administrativo/nuevo")
   public String addAdministrativo(Manager manager) {
-    log.info("Administrativo creado: {}", manager);
+
+    manager.getUser().getTheRoles().add(new Role(null, "ROLE_ADMIN"));
 
     this.service.save(manager);
-    return "redirect:/usuario/listar";
+    return "redirect:/usuario/administrativo/listar";
   }
 
+  @GetMapping("/administrativo/editar/{userId}")
+  public String mostrarFormularioEditarAdministrativo(@PathVariable("userId") Long userId, Model model) {
 
-  @GetMapping("/editar")
-  public String mostrarFormularioEditarAdministrativo() {
-    return "views-administrativo/formulario_editarAdministrativo";
+    Manager manager = service.findByUserId(userId).orElse(new Manager());
+    log.info("mostrarFormularioEditarAdministrativo: {}", manager);
+    model.addAttribute("theManager", manager);
+
+    return "views-administrativo/formulario_administrativo_editar";
   }
+
 
   @ModelAttribute(name = "administrativo")
   public Manager administrativo() {
