@@ -16,7 +16,7 @@
         <nav th:replace="fragments/navbar_cliente.html :: navbar"></nav>
 
         <main class="principal blur">
-            <h1 >Bienvenido(a), <span th:text="${usuarioNombre}" class="txt-bold"></span></h1>
+            <h1>Bienvenido(a), <span th:text="${usuarioNombre}" class="txt-bold"></span></h1>
             <h2 th:text="${'Resumen de actividades y solicitudes a dia ' + #dates.format(#dates.createNow(), 'dd/MM/yyyy, HH:mm') +' hrs.'}"></h2>
 
             <div class="box__main">
@@ -70,7 +70,7 @@
 
         </main>
 
-        <script src="script.js"></script>
+        <script th:src="@{/js/script.js}"></script>
     </body>
 
 </html>
