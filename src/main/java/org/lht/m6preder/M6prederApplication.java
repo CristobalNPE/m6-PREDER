@@ -34,7 +34,7 @@ public class M6prederApplication {
 //      Role role = new Role(null, "ROLE_ADMIN");
 //      List<Role> roles = new ArrayList<>();
 //      roles.add(role);
-//      User user = new User(null, "jefe", "jefe", "Jefazo", new Date(9999L), 666999, roles, null);
+//      User user = new User(null, "admin", "admin", "Admin Test", new Date(9999L), 666999, roles, null);
 //      Manager manager = new Manager(null, user, "Administracion", "Mucha");
 //      managerService.save(manager);
 //    };

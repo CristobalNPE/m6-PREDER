@@ -47,7 +47,9 @@
                 </li>
 
                 <li>
-                    <a class="navbar__link" href="#">
+                    <a th:classappend="${#httpServletRequest.getRequestURI().contains('/revision') ? 'active' : ''}"
+                       class="navbar__link"
+                       th:href="@{/revision/administrativo/listar}">
                         <span class="material-symbols-outlined nav-icon">checklist</span>
                         <p class="navbar__text">Revisiones</p>
                         <span class="navbar__tooltip">Revisiones</span>

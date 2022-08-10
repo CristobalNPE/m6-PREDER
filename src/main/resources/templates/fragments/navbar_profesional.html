@@ -39,7 +39,7 @@
                 </li>
                 <li>
                     <a th:classappend="${#httpServletRequest.getRequestURI().contains('/revision/') ? 'active' : ''}"
-                       class="navbar__link" th:href="@{/revision/listar/}">
+                       class="navbar__link" th:href="@{/revision/profesional/listar}">
                         <span class="material-symbols-outlined nav-icon">checklist</span>
                         <p class="navbar__text">Revisiones</p>
                         <span class="navbar__tooltip">Revisiones</span>

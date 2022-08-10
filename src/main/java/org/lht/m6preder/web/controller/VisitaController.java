@@ -41,14 +41,8 @@ public class VisitaController {
     Professional professional = professionalService.findByUserId(idUsuario).get();
     Customer cliente = customerService.findById(idCliente).get();
 
-    log.info("PROFESIONAL ENCONTRADO {}", professional);
-    log.info("CLIENTE ENCONTRADO {}", cliente);
-
     inspection.setInspectorProfessional(professional);
     inspection.setInspectedCustomer(cliente);
-    log.info("ID PROF AGERGADA BIEN? {}",inspection.getInspectorProfessional().getProfessionalId());
-    log.info("ID CLIENT AGERGADA BIEN? {}",inspection.getInspectedCustomer().getCustomerId());
-
 
     this.service.save(inspection);
     return "redirect:/visita/profesional/listar";
@@ -57,8 +51,6 @@ public class VisitaController {
 
   @PostMapping("/profesional/nuevo")
   public String addVisita(Inspection inspection) {
-
-    log.info("Visita creada; {}", inspection.toString());
 
     this.service.save(inspection);
     return "redirect:/visita/listar";
@@ -77,6 +69,14 @@ public class VisitaController {
   public String listarClientes(Model model) {
     model.addAttribute("listarClientes", customerService.findAll());
     return "views-profesional/listar_clientes_visita";
+
+  }
+
+  @GetMapping("/administrativo/listar")
+  public String listarTodas(Model model) {
+    model.addAttribute("listaVisitas", service.findAll());
+
+    return "views-administrativo/lista_visitas";
 
   }
 

@@ -21,9 +21,9 @@
                 <thead>
                     <tr>
 
-                        <th>ID Cliente</th>
-                        <th>Monto($)</th>
-                        <th>F.Pago</th>
+                        <th>Cliente [ID]</th>
+                        <th>Monto</th>
+                        <th>Fecha de Pago</th>
 
                     </tr>
                 </thead>
@@ -31,8 +31,8 @@
                 <tbody>
                     <tr th:each="pago : ${listaPago}">
 
-                        <td th:text="${pago.customer.customerId}">11</td>
-                        <td th:text="${pago.amount}">11</td>
+                        <td><span th:text="${pago.customer.user.name}"></span> [<span th:text="${pago.customer.customerId}"></span>]</td>
+                        <td>$ <span th:text="${pago.amount}"></span></td>
                         <td th:text="${pago.paymentDate}">11</td>
 
                     </tr>

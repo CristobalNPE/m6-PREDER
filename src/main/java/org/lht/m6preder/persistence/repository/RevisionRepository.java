@@ -42,4 +42,9 @@ public class RevisionRepository implements ChecklistRepository {
   public void delete(Long checklistId) {
     crud.deleteById(checklistId);
   }
+
+  @Override
+  public List<Checklist> findAllByVisita_ProfesionalQueVisita_IdProfesional(Long professionalId) {
+    return mapper.toChecklists((List<Revision>) crud.findAllByVisita_ProfesionalQueVisita_IdProfesional(professionalId));
+  }
 }

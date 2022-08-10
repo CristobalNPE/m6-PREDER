@@ -27,7 +27,12 @@ public class CapacitacionController {
 
 
   @GetMapping("/cliente/nueva")
-  public String mostrarFormularioNuevaCapacitacion() {
+  public String mostrarFormularioNuevaCapacitacion(Model model) {
+    Long idCliente = (Long) model.getAttribute("idForRole");
+    Customer customer = this.customerService.findById(idCliente).get();
+
+    model.addAttribute("customer", customer);
+
     return "views-cliente/formulario_capacitacion";
   }
 

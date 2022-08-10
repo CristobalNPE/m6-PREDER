@@ -16,7 +16,7 @@ public class ChecklistService {
     this.repo = repo;
   }
 
-  public List<Checklist> findAll(){
+  public List<Checklist> findAll() {
     return repo.findAll();
   }
 
@@ -28,11 +28,15 @@ public class ChecklistService {
     return repo.save(checklist);
   }
 
-  public boolean delete(Long checklistId){
+  public boolean delete(Long checklistId) {
     return findById(checklistId)
             .map(check -> {
               repo.delete((checklistId));
               return true;
             }).orElse(false);
+  }
+
+  public List<Checklist> findAllByProfessionalId(Long professionalId) {
+    return repo.findAllByVisita_ProfesionalQueVisita_IdProfesional(professionalId);
   }
 }

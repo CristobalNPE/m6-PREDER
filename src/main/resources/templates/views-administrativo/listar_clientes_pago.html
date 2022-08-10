@@ -2,7 +2,7 @@
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org">
     <head th:include="fragments/head.html :: headFragment">
-        <title id="tituloPagina">PREDER | Pagos</title>
+        <title id="tituloPagina">PREDER | Asignar Pagos</title>
     </head>
     <body>
 
@@ -14,8 +14,9 @@
         <nav th:replace="fragments/navbar_administrativo.html :: navbar"></nav>
 
         <main class="principal">
-            <h1>Clientes Registrados</h1>
-            <h2>Lista de clientes registrados en sistema.</h2>
+            <h1>Clientes - Asignar pago</h1>
+            <h2>Utilice la lista de clientes para asignar (<span
+                    class="material-symbols-outlined table__icon">add_circle</span>) un nuevo pago.</h2>
 
             <table id="users" class="main__table responsive nowrap" width="100%">
                 <thead>
@@ -26,8 +27,6 @@
                         <th>Direccion</th>
                         <th>Comuna</th>
                         <th>_</th>
-
-
                     </tr>
                 </thead>
 

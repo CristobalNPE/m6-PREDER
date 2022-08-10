@@ -73,7 +73,7 @@ public class UserRoleAdvice {
       log.info("CURRENT idForRole: {}", manager.getManagerId());
 
       return manager.getManagerId();
-    } else if (role.trim().equals("ROLE_PROF")) {
+    } else if (role.trim().equals("ROLE_PROFE")) {
       Professional professional = this.professionalService.findByUserId(this.getUserId()).get();
       log.info("CURRENT idForRole: {}", professional.getProfessionalId());
 
