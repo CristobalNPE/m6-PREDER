@@ -13,59 +13,24 @@
             <span class="material-symbols-outlined close-icon" id="close-icon">close</span>
         </button>
 
-        <nav th:replace="fragments/navbar_cliente.html :: navbar"></nav>
+        <nav th:replace="fragments/navbar_profesional.html :: navbar"></nav>
 
         <main class="principal blur">
             <h1 th:text="${'Bienvenido, ' + usuarioNombre + '.'}">Bienvenido, Juanito Perez</h1>
             <h2 th:text="${'Resumen de actividades y solicitudes a dia ' + #dates.format(#dates.createNow(), 'dd/MM/yyyy, HH:mm') +' hrs.'}"></h2>
 
             <div class="box__main">
-                <div class="widget__container">
-                    <div class="widget__principal">
-                        <h1 th:text="${capasSolicitadas}" class="widget__title">99</h1>
-                        <h2 th:if="${capasSolicitadas == 1}" class="widget__info">Capacitación</br>solicitada</h2>
-                        <h2 th:if="${capasSolicitadas != 1}" class="widget__info">Capacitaciones solicitadas</h2>
-                    </div>
-                    <p class="widget__detalles">Proxima Capacitacion: Sin.Impl</p>
-                    <span class="material-symbols-outlined widget__icon">
-          auto_stories
-          </span>
-                </div>
+
                 <div class="widget__container">
                     <div class="widget__principal">
                         <h1 class="widget__title">0</h1>
                         <h2 class="widget__info">Accidentes Reportados</h2>
                     </div>
                     <p class="widget__detalles">Sin implementar</p>
-                    <span class="material-symbols-outlined widget__icon">
-          health_and_safety
-          </span>
-                </div>
-                <div class="widget__container">
-                    <div class="widget__principal">
-                        <h1 th:text="${visitasAsociadas}" class="widget__title">3</h1>
-                        <h2 th:if="${visitasAsociadas == 1}" class="widget__info">Visita agendada</h2>
-                        <h2 th:if="${visitasAsociadas != 1}" class="widget__info">Visitas agendadas</h2>
-                    </div>
-                    <p class="widget__detalles">Proxima Visita: Sin.Impl</p>
-                    <span class="material-symbols-outlined widget__icon">
-          share_location
-          </span>
+                    <span class="material-symbols-outlined widget__icon">health_and_safety</span>
+
 
                 </div>
-                <div class="widget__container">
-                    <div class="widget__principal">
-                        <h1 th:text="${pagosAsociados}" class="widget__title">2</h1>
-                        <h2 th:if="${pagosAsociados == 1}" class="widget__info">Pago Pendiente</h2>
-                        <h2 th:if="${pagosAsociados != 1}" class="widget__info">Pagos Pendientes</h2>
-                    </div>
-
-                    <p class="widget__detalles">Proximo Vencimiento: Sin.Impl</p>
-                    <span class="material-symbols-outlined widget__icon">
-          payments
-          </span>
-                </div>
-            </div>
 
 
         </main>

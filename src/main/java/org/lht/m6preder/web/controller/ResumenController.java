@@ -35,4 +35,16 @@ public class ResumenController {
     return "views-cliente/resumen_cliente";
   }
 
+  @GetMapping("/administrativo")
+  public String getResumenAdmin(Model model) {
+
+    return "views-administrativo/resumen_administrativo";
+  }
+
+  @GetMapping("/profesional")
+  public String getResumenProfe(Model model) {
+
+    return "views-profesional/resumen_profesional";
+  }
+
 }
