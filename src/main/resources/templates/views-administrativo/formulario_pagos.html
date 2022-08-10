@@ -16,7 +16,8 @@
 
         <main class="principal">
             <h1>Ingresar un nuevo pago</h1>
-            <h2>Ingrese la información para registrar un nuevo pago</h2>
+            <h2>Registrar un nuevo pago para <span class="txt-wht" th:text="${cliente.user.name}"></span> <a
+                    th:href="@{/pago/administrativo/listarClientes}" class="txt-small txt-sub txt-muted">(cambiar cliente)</a></h2>
 
             <form method="post" th:action="@{/pago/administrativo/nuevo/{idCliente}(idCliente=${cliente.customerId})}"
                   class="form__container" id="pago_form" th:object="${pago}">

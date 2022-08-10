@@ -920,6 +920,18 @@ footer {
     letter-spacing: 1px;
     color: #f2f2ff;
 }
+.txt-wht {
+    color: #f2f2ff;
+}
+.txt-muted {
+    color: var(--text-color-muted);
+}
+.txt-sub {
+    text-decoration: underline;
+}
+.txt-small {
+    font-size: .8rem;
+}
 
 
 

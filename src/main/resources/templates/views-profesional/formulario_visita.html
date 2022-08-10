@@ -16,7 +16,9 @@
 
         <main class="principal">
             <h1>Ingresar una nueva Visita en Terreno</h1>
-            <h2>Ingrese la información para registrar un nueva visita</h2>
+            <h2>Registrar una visita para <span class="txt-wht" th:text="${cliente.user.name}"></span> <a
+                    th:href="@{/visita/profesional/listarClientes}" class="txt-small txt-sub txt-muted">(cambiar
+                cliente)</a></h2>
 
             <form method="post" class="form__container" id="visita_form" th:object="${visita}"
                   th:action="@{/visita/profesional/nuevo/{idCliente}(idCliente=${cliente.customerId})}">
