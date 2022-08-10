@@ -42,4 +42,9 @@ public class PagoRepository implements PaymentRepository {
   public void delete(Long paymentId) {
     crud.deleteById(paymentId);
   }
+
+  @Override
+  public List<Payment> findAllByCliente_IdCliente(Long customerId) {
+    return mapper.toPayments((List<Pago>) crud.findAllByCliente_IdCliente(customerId));
+  }
 }

@@ -560,16 +560,24 @@ h3 {
     max-height: 400px;
 
 }
+.box__main {
+    padding-block: 2.5em;
+    /* background-color: red; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+
+}
 
 @media (max-width: 1450px) {
-    .form__main {
+    .form__main, .box__main {
         grid-template-columns: repeat(2, 1fr);
 
     }
 }
 
 @media (max-width: 1050px) {
-    .form__main {
+    .form__main,.box__main {
         grid-template-columns: repeat(1, 1fr);
     }
 }

@@ -48,6 +48,16 @@ public class VisitaRepository implements InspectionRepository {
 
   @Override
   public List<Inspection> findAllByProfesionalQueVisita_Usuario_IdUsuario(Long userId) {
-    return mapper.toInspections((List<Visita>) crud.findAllByProfesionalQueVisita_Usuario_IdUsuario(userId));
+    return mapper.toInspections(crud.findAllByProfesionalQueVisita_Usuario_IdUsuario(userId));
+  }
+
+  @Override
+  public List<Inspection> findAllByClienteVisitado_IdCliente(Long customerId) {
+    return mapper.toInspections(crud.findAllByClienteVisitado_IdCliente(customerId));
+  }
+
+  @Override
+  public Integer countAllByClienteVisitado_IdCliente(Long customerId) {
+    return crud.countAllByClienteVisitado_IdCliente(customerId);
   }
 }

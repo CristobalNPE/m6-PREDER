@@ -39,4 +39,6 @@ public class TrainingService {
   public List<Training> findAllByUserId(Long userId) {
     return repo.findAllByCliente_Usuario_IdUsuario(userId);
   }
+
+
 }

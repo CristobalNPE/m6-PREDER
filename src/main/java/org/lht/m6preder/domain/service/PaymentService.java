@@ -4,6 +4,7 @@ import org.lht.m6preder.domain.dto.Payment;
 import org.lht.m6preder.domain.repository.PaymentRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -28,12 +29,15 @@ public class PaymentService {
     return repo.save(payment);
   }
 
-  public boolean delete ( Long paymentId){
+  public boolean delete(Long paymentId) {
     return findById(paymentId)
-            .map(pay ->{
-      repo.delete(paymentId);
-      return true;
-    }).orElse(false);
+            .map(pay -> {
+              repo.delete(paymentId);
+              return true;
+            }).orElse(false);
   }
 
+  public List<Payment> findAllByCustomer(Long idCliente) {
+    return repo.findAllByCliente_IdCliente(idCliente);
+  }
 }

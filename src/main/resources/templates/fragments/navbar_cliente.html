@@ -21,7 +21,8 @@
             <ul>
 
                 <li>
-                    <a class="navbar__link" href="#">
+                    <a th:classappend="${#httpServletRequest.getRequestURI().contains('/resumen') ? 'active' : ''}"
+                       class="navbar__link" th:href="@{/resumen/cliente}">
                         <span class="material-symbols-outlined nav-icon">account_box</span>
                         <p class="navbar__text">Resumen</p>
                         <span class="navbar__tooltip">Resumen</span>
@@ -67,7 +68,7 @@
             <img class="perfil__foto" th:src="@{/img/preder_profile.jpg}" alt="Foto de Perfil">
 
             <div class="perfil__info">
-<!--                <p class="perfil__usuario-nombre" sec:authentication="name">Juanito Perez</p>-->
+                <!--                <p class="perfil__usuario-nombre" sec:authentication="name">Juanito Perez</p>-->
                 <p class="perfil__usuario-nombre" th:text="${usuarioNombre}">Juanito Perez</p>
                 <p class="perfil__usuario-perfil">Perfil Cliente</p>
             </div>

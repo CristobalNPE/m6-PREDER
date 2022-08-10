@@ -14,7 +14,7 @@ import java.util.Collection;
 public class CustomAuthenticationHandler implements AuthenticationSuccessHandler {
 
   SimpleUrlAuthenticationSuccessHandler clienteSuccessHandler =
-          new SimpleUrlAuthenticationSuccessHandler("/capacitacion/cliente/listar");
+          new SimpleUrlAuthenticationSuccessHandler("/resumen/cliente");
   SimpleUrlAuthenticationSuccessHandler adminSuccessHandler =
           new SimpleUrlAuthenticationSuccessHandler("/usuario/administrativo/listar");
   SimpleUrlAuthenticationSuccessHandler profeSuccessHandler =

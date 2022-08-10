@@ -1,7 +1,6 @@
 package org.lht.m6preder.domain.service;
 
 import org.lht.m6preder.domain.dto.Inspection;
-import org.lht.m6preder.domain.dto.Training;
 import org.lht.m6preder.domain.repository.InspectionRepository;
 import org.springframework.stereotype.Service;
 
@@ -39,6 +38,14 @@ public class InspectionService {
 
   public List<Inspection> findAllByUserId(Long userId) {
     return repo.findAllByProfesionalQueVisita_Usuario_IdUsuario(userId);
+  }
+
+  public List<Inspection> findAllByCustomer(Long customerId) {
+    return repo.findAllByClienteVisitado_IdCliente(customerId);
+  }
+
+  public Integer countByCustomer(Long customerId) {
+    return repo.countAllByClienteVisitado_IdCliente(customerId);
   }
 
 }
