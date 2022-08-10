@@ -43,8 +43,8 @@ public class UserRoleAdvice {
     }
   }
 
-
-  private String getUserRol() {
+  @ModelAttribute("nameOfRole")
+  public String getUserRol() {
 
     Authentication auth = SecurityContextHolder.getContext().getAuthentication();
     Optional<User> user = service.findUserByUsername(auth.getName());

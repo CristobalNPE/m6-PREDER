@@ -23,7 +23,11 @@
                 <h2 class="hero__sub">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
 
             </div>
-            <a th:href="@{/login}" class="btn btn-hero btn-l">ingresar</a>
+            <a th:if="${nameOfRole.equals('')}" th:href="@{/login}" class="btn btn-hero btn-l">ingresar</a>
+            <a th:if="${nameOfRole.equals('ROLE_CLIENTE')}" th:href="@{/resumen/cliente}" class="btn btn-hero btn-l">ingresar</a>
+            <a th:if="${nameOfRole.equals('ROLE_ADMIN')}" th:href="@{/resumen/administrativo}"
+               class="btn btn-hero btn-l">ingresar</a>
+            <a th:if="${nameOfRole.equals('ROLE_PROF')}" th:href="@{/resumen/profesional}" class="btn btn-hero btn-l">ingresar</a>
         </div>
         <footer>
             Los Huasos TECH 2022.
