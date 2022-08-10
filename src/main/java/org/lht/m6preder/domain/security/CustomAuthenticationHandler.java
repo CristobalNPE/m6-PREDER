@@ -16,9 +16,9 @@ public class CustomAuthenticationHandler implements AuthenticationSuccessHandler
   SimpleUrlAuthenticationSuccessHandler clienteSuccessHandler =
           new SimpleUrlAuthenticationSuccessHandler("/resumen/cliente");
   SimpleUrlAuthenticationSuccessHandler adminSuccessHandler =
-          new SimpleUrlAuthenticationSuccessHandler("/usuario/administrativo/listar");
+          new SimpleUrlAuthenticationSuccessHandler("/resumen/administrativo");
   SimpleUrlAuthenticationSuccessHandler profeSuccessHandler =
-          new SimpleUrlAuthenticationSuccessHandler("/visita/profesional/listar");
+          new SimpleUrlAuthenticationSuccessHandler("/resumen/profesional");
 
   @Override
   public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
