@@ -16,7 +16,7 @@
         <nav th:replace="fragments/navbar_profesional.html :: navbar"></nav>
 
         <main class="principal blur">
-            <h1 th:text="${'Bienvenido, ' + usuarioNombre + '.'}">Bienvenido, Juanito Perez</h1>
+            <h1 >Bienvenido(a), <span th:text="${usuarioNombre}" class="txt-bold"></span></h1>
             <h2 th:text="${'Resumen de actividades y solicitudes a dia ' + #dates.format(#dates.createNow(), 'dd/MM/yyyy, HH:mm') +' hrs.'}"></h2>
 
             <div class="box__main">

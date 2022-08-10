@@ -912,6 +912,14 @@ footer {
     margin-top: .7em;
 
 }
+.txt-c {
+    text-align: center;
+}
+.txt-bold {
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #f2f2ff;
+}
 
 
 
@@ -944,7 +952,4 @@ footer {
     text-align: center;
     font-size: 1rem;
     color: var(--color-bad);
-}
-.txt-c {
-    text-align: center;
 }

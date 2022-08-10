@@ -22,28 +22,18 @@ import java.security.Principal;
 @RequiredArgsConstructor
 public class ContactoController {
 
-  private final UserService userService;
-
   @GetMapping("/cliente/contactar")
   public String mostrarFormularioContacto() {
-
-    Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-
-    log.info("PRINCIPAL INFO: {}", auth.getName());
-    User currentUser = userService.findUserByUsername(auth.getName()).get();
-    log.info("Info usuario {}: ID:{} ,, Nombre: {}", auth.getName(), currentUser.getUserId(), currentUser.getName());
-
 
     return "views-cliente/contacto";
   }
 
 
-  @PostMapping
+  @PostMapping("/cliente/contactar")
   public String procesarContacto(Contacto contacto) {
-
-
+    /*Se muestra contacto por consola, segun solicitado en SPRINT*/
     log.info("Contacto Solicitado: {}", contacto);
-    return "redirect:/views-cliente/contacto";
+    return "redirect:/contacto/cliente/contactar";
   }
 
 
