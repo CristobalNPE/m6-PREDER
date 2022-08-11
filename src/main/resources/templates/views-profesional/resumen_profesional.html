@@ -23,13 +23,43 @@
 
                 <div class="widget__container">
                     <div class="widget__principal">
-                        <h1 class="widget__title">0</h1>
-                        <h2 class="widget__info">Accidentes Reportados</h2>
+                        <h1 th:text="${cantidadVisitas}" class="widget__title">99</h1>
+                        <h2 th:if="${cantidadVisitas == 1}" class="widget__info">Visita Registrada</h2>
+                        <h2 th:if="${cantidadVisitas != 1}" class="widget__info">Visitas Registradas</h2>
                     </div>
-                    <p class="widget__detalles">Sin implementar</p>
-                    <span class="material-symbols-outlined widget__icon">health_and_safety</span>
+                    <p class="widget__detalles">Sin Implementación</p>
+                    <span class="material-symbols-outlined widget__icon">nest_doorbell_visitor</span>
+                </div>
 
+                <div class="widget__container">
+                    <div class="widget__principal">
+                        <h1 th:text="${cantidadRevisiones}" class="widget__title">3</h1>
+                        <h2 th:if="${cantidadRevisiones == 1}" class="widget__info">Revision disponible</h2>
+                        <h2 th:if="${cantidadRevisiones != 1}" class="widget__info">Revisiones disponibles</h2>
+                    </div>
+                    <p class="widget__detalles">Sin Implementación</p>
+                    <span class="material-symbols-outlined widget__icon">domain_verification</span>
 
+                </div>
+                <div class="widget__container">
+                    <div class="widget__principal">
+                        <h1 th:text="${cantidadAsesorias}" class="widget__title">3</h1>
+                        <h2 th:if="${cantidadAsesorias == 1}" class="widget__info">Solicitud de asesoría</h2>
+                        <h2 th:if="${cantidadAsesorias != 1}" class="widget__info">Solicitudes de asesoría</h2>
+                    </div>
+                    <p class="widget__detalles">Sin Implementación</p>
+                    <span class="material-symbols-outlined widget__icon">tips_and_updates</span>
+
+                </div>
+                <div class="widget__container">
+                    <div class="widget__principal">
+                        <h1 th:text="${cantidadClientes}" class="widget__title">2</h1>
+                        <h2 th:if="${cantidadClientes == 1}" class="widget__info">Cliente notificado</h2>
+                        <h2 th:if="${cantidadClientes != 1}" class="widget__info">Clientes notificados</h2>
+                    </div>
+
+                    <p class="widget__detalles">Sin Implementación</p>
+                    <span class="material-symbols-outlined widget__icon">support_agent</span>
                 </div>
 
             </div>

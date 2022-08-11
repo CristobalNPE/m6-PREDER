@@ -26,20 +26,20 @@
                         <h2 th:if="${capasSolicitadas == 1}" class="widget__info">Capacitación</br>solicitada</h2>
                         <h2 th:if="${capasSolicitadas != 1}" class="widget__info">Capacitaciones solicitadas</h2>
                     </div>
-                    <p class="widget__detalles">Proxima Capacitacion: Sin.Impl</p>
+                    <p class="widget__detalles">Sin Implementación</p>
                     <span class="material-symbols-outlined widget__icon">
           auto_stories
           </span>
                 </div>
                 <div class="widget__container">
                     <div class="widget__principal">
-                        <h1 class="widget__title">0</h1>
-                        <h2 class="widget__info">Accidentes Reportados</h2>
+                        <h1 th:text="${cantidadAccidentes}" class="widget__title">3</h1>
+                        <h2 th:if="${cantidadAccidentes == 1}" class="widget__info">Accidente Reportado</h2>
+                        <h2 th:if="${cantidadAccidentes != 1}" class="widget__info">Accidentes Reportados</h2>
                     </div>
-                    <p class="widget__detalles">Sin implementar</p>
-                    <span class="material-symbols-outlined widget__icon">
-          health_and_safety
-          </span>
+                    <p class="widget__detalles">Sin Implementación</p>
+                    <span class="material-symbols-outlined widget__icon">health_and_safety</span>
+
                 </div>
                 <div class="widget__container">
                     <div class="widget__principal">
@@ -47,7 +47,7 @@
                         <h2 th:if="${visitasAsociadas == 1}" class="widget__info">Visita agendada</h2>
                         <h2 th:if="${visitasAsociadas != 1}" class="widget__info">Visitas agendadas</h2>
                     </div>
-                    <p class="widget__detalles">Proxima Visita: Sin.Impl</p>
+                    <p class="widget__detalles">Sin Implementación</p>
                     <span class="material-symbols-outlined widget__icon">
           share_location
           </span>
@@ -60,7 +60,7 @@
                         <h2 th:if="${pagosAsociados != 1}" class="widget__info">Pagos Registrados</h2>
                     </div>
 
-                    <p class="widget__detalles">Proximo Vencimiento: Sin.Impl</p>
+                    <p class="widget__detalles">Sin Implementación</p>
                     <span class="material-symbols-outlined widget__icon">
           payments
           </span>
