@@ -1,31 +1,3 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@CristobalNPE 
-Natalia1428
-/
-PREDER-m6
-Public
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-PREDER-m6/README.md
-@Natalia1428
-Natalia1428 Update README.md
-Latest commit 5ec97e5 10 hours ago
- History
- 1 contributor
-91 lines (59 sloc)  3.36 KB
-
 # Sprint Final Módulo 6 [JAVA-EE con Framework SpringBoot]
 
 #### Desarrollado por Los Huasos TECH:
@@ -117,17 +89,3 @@ algunas implementaciones al sistema, para garantizar el apropiado funcionamiento
 - MySQL
 - SpringBoot
 - DataTables
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
